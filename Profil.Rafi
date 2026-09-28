@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CV - Nama Lengkap Anda</title>
+</head>
+<body>
+
+  <header>
+    <img src="foto-profil.jpeg" alt="Foto profil" width="150" height="150">
+    <h1>Nama Lengkap Anda</h1>
+    <p><strong>Mahasiswa | Hardware Enthusiast | Video &amp; Photo Editor</strong></p>
+  </header>
+
+  <hr>
+
+  <section>
+    <h2>Kontak</h2>
+    <ul>
+      <li>Telepon: <a href="tel:+6281234567890">+62 812-3456-7890</a></li>
+      <li>Email: <a href="mailto:emailanda@gmail.com">emailanda@gmail.com</a></li>
+      <li>LinkedIn: <a href="https://www.linkedin.com/in/username-anda"
+          target="_blank" rel="noopener noreferrer">linkedin.com/in/username-anda</a></li>
+    </ul>
+  </section>
+
+  <hr>
+
+  <section>
+    <h2>Profil</h2>
+    <p>
+      Saya adalah seorang mahasiswa dengan minat pada dunia hardware dan kreativitas visual.
+      Saya memahami berbagai alat hardware serta mampu melakukan perbaikan dan maintenance.
+      Di luar itu, saya menekuni editing video dan foto, serta memiliki hobi merakit dan
+      mengoleksi Gundam. Saya senang belajar hal baru, teliti, dan siap berkembang bersama tim.
+    </p>
+  </section>
+
+  <hr>
+
+  <section>
+    <h2>Keahlian</h2>
+    <ul>
+      <li>Hardware: Memahami alat-alat hardware serta melakukan perbaikan dan maintenance.</li>
+      <li>Editing Video: Memotong, menyusun, dan menyempurnakan video.</li>
+      <li>Editing Foto: Retouching dan pengolahan foto.</li>
+    </ul>
+
+    <h3>Tools</h3>
+    <ul>
+      <li>[Aplikasi editing video, contoh: CapCut / Premiere Pro]</li>
+      <li>[Aplikasi editing foto, contoh: Photoshop / Lightroom]</li>
+      <li>[Peralatan hardware, contoh: obeng presisi, multimeter, solder]</li>
+    </ul>
+  </section>
+
+  <hr>
+
+  <section>
+    <h2>Minat &amp; Hobi</h2>
+    <ul>
+      <li>Gundam (merakit dan mengoleksi model kit)</li>
+      <li>Editing video dan foto</li>
+      <li>Perbaikan dan maintenance hardware</li>
+    </ul>
+  </section>
+
+  <hr>
+
+  <section>
+    <h2>Sertifikasi</h2>
+    <ul>
+      <li>[Nama sertifikat - penyelenggara (bulan tahun)]</li>
+    </ul>
+  </section>
+
+</body>
+</html>
