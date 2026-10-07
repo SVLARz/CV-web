@@ -1,0 +1,292 @@
+/* CV Rafi Kornel Bukhori
+ * Arah desain: matcha yang tenang. Kertas hijau teh yang sangat pucat,
+ * tinta hijau tua, aksen hijau matcha yang diredam. Garis tipis, sudut lembut.
+ */
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Figtree:wght@400;500;600&display=swap");
+
+/* ---------- Token ---------- */
+:root {
+  --color-paper: oklch(96.5% 0.018 135);
+  --color-paper-2: oklch(92.5% 0.03 135);
+  --color-ink: oklch(27% 0.045 150);
+  --color-ink-soft: oklch(46% 0.04 150);
+  --color-rule: oklch(84% 0.03 138);
+  --color-accent: oklch(47% 0.09 145);
+  --color-accent-ink: oklch(97% 0.015 135);
+  --color-signal: oklch(82% 0.085 128);
+  --color-focus: oklch(50% 0.17 255);
+
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 4rem;
+
+  --radius-sm: 6px;
+  --radius-md: 18px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 180ms;
+  --dur-base: 600ms;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-paper: oklch(21% 0.025 150);
+    --color-paper-2: oklch(27% 0.03 150);
+    --color-ink: oklch(93% 0.02 135);
+    --color-ink-soft: oklch(75% 0.03 140);
+    --color-rule: oklch(36% 0.03 150);
+    --color-accent: oklch(76% 0.11 135);
+    --color-accent-ink: oklch(21% 0.025 150);
+    --color-signal: oklch(40% 0.06 145);
+    --color-focus: oklch(78% 0.13 245);
+  }
+}
+
+/* ---------- Dasar ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: clip;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 54rem;
+  padding: var(--space-xl) var(--space-lg) calc(var(--space-2xl) + env(safe-area-inset-bottom, 0px));
+  padding-top: calc(var(--space-xl) + env(safe-area-inset-top, 0px));
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-style: normal;
+  line-height: 1.15;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 4px;
+  white-space: nowrap;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+a:hover {
+  color: var(--color-ink);
+}
+
+a:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* ---------- Header ---------- */
+header {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--space-xl);
+  align-items: center;
+  padding-bottom: var(--space-xl);
+}
+
+header img {
+  width: clamp(120px, 22vw, 180px);
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  box-shadow: 10px 10px 0 var(--color-signal);
+}
+
+header h1 {
+  font-size: clamp(2.2rem, 6.5vw, 3.6rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+header p {
+  margin-top: var(--space-md);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--color-accent);
+}
+
+/* ---------- Section ---------- */
+section {
+  padding: var(--space-xl) 0;
+  border-top: 1px solid var(--color-rule);
+}
+
+section h2 {
+  margin-bottom: var(--space-lg);
+  font-size: clamp(1.45rem, 3.5vw, 1.85rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+section h3 {
+  margin: var(--space-xl) 0 var(--space-md);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--color-ink-soft);
+}
+
+/* Kontak: baris sederhana */
+#kontak li {
+  display: grid;
+  grid-template-columns: 7rem minmax(0, 1fr);
+  gap: var(--space-md);
+  align-items: baseline;
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--color-rule);
+  color: var(--color-ink-soft);
+}
+
+#kontak li:last-child {
+  border-bottom: 0;
+}
+
+/* Profil */
+#profil p {
+  max-width: 62ch;
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
+/* Keahlian: kolom dengan garis atas */
+.keahlian {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: var(--space-lg) var(--space-xl);
+}
+
+.keahlian li {
+  padding-top: var(--space-md);
+  border-top: 3px solid var(--color-accent);
+  font-size: 0.97rem;
+}
+
+/* Tools dan hobi: chip lembut */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.chips li {
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-paper-2);
+  border: 1px solid var(--color-rule);
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: background-color var(--dur-fast) var(--ease-out),
+              color var(--dur-fast) var(--ease-out),
+              border-color var(--dur-fast) var(--ease-out);
+}
+
+.chips li:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-accent-ink);
+}
+
+/* ---------- Satu gerakan saat halaman dibuka ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  header {
+    animation: masuk var(--dur-base) var(--ease-out) both;
+  }
+}
+
+@keyframes masuk {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 640px) {
+  body {
+    padding-inline: var(--space-md);
+  }
+
+  header {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-lg);
+  }
+
+  header img {
+    width: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  #kontak li {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-xs);
+  }
+}
+
+/* ---------- Cetak: tetap satu halaman ---------- */
+@media print {
+  :root {
+    --color-paper: white;
+    --color-paper-2: white;
+    --color-ink: black;
+    --color-ink-soft: black;
+    --color-accent: black;
+    --color-signal: white;
+  }
+
+  body {
+    padding: 0;
+  }
+
+  section {
+    padding: var(--space-md) 0;
+    break-inside: avoid;
+  }
+
+  header img {
+    box-shadow: none;
+  }
+}
